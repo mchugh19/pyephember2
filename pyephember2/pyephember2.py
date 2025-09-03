@@ -211,6 +211,8 @@ def scheduletime_to_time(dict, key_name):
     stime = dict[key_name]
     if stime is None:
         return None
+    elif stime == 0:                                               
+        return datetime.time(0, 0)
     return datetime.time(int(str(stime)[:-1]), 10 * int(str(stime)[-1:]))
 
 def getZoneTime(zone):
